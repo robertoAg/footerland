@@ -1,0 +1,33 @@
+.text-container {
+  text-align: justify;
+  width: 400px;
+  margin: 0 auto 100px;
+}
+li {
+  list-style: none;
+}
+footer{
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  background-color: black;
+}
+.cover-footer {
+  width: 100%;
+  background: black;
+  height: 25px;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+}
+.building{
+  position: absolute;
+  background-image: url('./../../assets/horizon/build.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  transition: 2s;
+}

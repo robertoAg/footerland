@@ -33,7 +33,6 @@ export class GooeyComponent implements OnInit {
   onMousewheel(event: any) {
     if(event.wheelDelta<0){
       this.addBubble()
-      //this.moveUpBubbles()
     }
   }
 
@@ -47,7 +46,7 @@ export class GooeyComponent implements OnInit {
         size: {
           width: Math.floor(Math.random()*10)
         },
-        init: function(bubbles: any){
+        autodestroy: function(bubbles: any){
           setTimeout(() =>{
             bubble.position.bottom += Math.random()*100 + 20;
           }, 2000)
@@ -56,14 +55,8 @@ export class GooeyComponent implements OnInit {
           }, 6000)
         }
       }
-      bubble.init(this.bubbles);
+      bubble.autodestroy(this.bubbles);
       this.bubbles.push(bubble);
     }
-  }
-
-  moveUpBubbles() {
-    this.bubbles.forEach((bubble: any) => {
-      bubble.position.bottom += Math.random()*100;
-    });
   }
 }
