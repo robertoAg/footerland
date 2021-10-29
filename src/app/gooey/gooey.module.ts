@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GooeyRoutingModule } from './gooey-routing.module';
 import { GooeyComponent } from './gooey.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { GooeyComponent } from './gooey.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     GooeyRoutingModule
   ]
 })

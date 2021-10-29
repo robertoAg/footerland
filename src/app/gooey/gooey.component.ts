@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-gooey',
@@ -7,8 +7,24 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class GooeyComponent implements OnInit {
 
-  constructor() { }
+  gooeyFooterColor: string = '#000';
   bubbles: any = [];
+
+  constructor() {
+    this.changeColor(this.gooeyFooterColor); // Set default theme
+  }
+
+  changeColor(gooeyFooterColor: string) {
+    document.documentElement.style.setProperty('--gooeyFooterColor', gooeyFooterColor);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes['myInput'].currentValue);
+  }
+
+  modelChangeFn(value: any){
+    document.documentElement.style.setProperty('--gooeyFooterColor', value);
+  }
 
   ngOnInit(): void {
     setInterval(()=>{
