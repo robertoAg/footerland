@@ -8,22 +8,20 @@ import { Component, HostListener, OnInit, SimpleChanges } from '@angular/core';
 export class GooeyComponent implements OnInit {
 
   gooeyFooterColor: string = '#000';
+  gooeyBubbleColor: string = '#000';
   bubbles: any = [];
 
   constructor() {
-    this.changeColor(this.gooeyFooterColor); // Set default theme
+    this.changeColor(this.gooeyFooterColor, '--gooeyFooterColor'); // Set default theme
+    this.changeColor(this.gooeyBubbleColor, '--gooeyBubbleColor'); // Set default theme
   }
 
-  changeColor(gooeyFooterColor: string) {
-    document.documentElement.style.setProperty('--gooeyFooterColor', gooeyFooterColor);
+  changeColor(gooeyFooterColor: string, propertyName: string) {
+    document.documentElement.style.setProperty(propertyName, gooeyFooterColor);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes['myInput'].currentValue);
-  }
-
-  modelChangeFn(value: any){
-    document.documentElement.style.setProperty('--gooeyFooterColor', value);
   }
 
   ngOnInit(): void {

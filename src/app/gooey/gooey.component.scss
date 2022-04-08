@@ -25,6 +25,7 @@
 }
 
 $footer-color: var(--gooeyFooterColor);
+$footer-bubble-color: var(--gooeyBubbleColor);
 
 footer {
   position: fixed;
@@ -55,9 +56,11 @@ li {
 }
 @keyframes moveUp {
   0% {
+    background-color: $footer-color;
     transform: translateY(0px);
   }
   30% {
+    background-color: $footer-color;
     transform: translateY(-10px);
   }
   40% {
@@ -72,7 +75,7 @@ li {
     height: 35px;
   }
   70% {
-    background-color: $footer-color;
+    background-color: $footer-bubble-color;
     width: 35px;
     height: 40px;
   }

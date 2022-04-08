@@ -1,8 +1,14 @@
 <div class="tool-container">
   <div class="title">Tools</div>
   <div>
-    <label>Gooey Footer Color</label>
-    <input type="color" [(ngModel)]="gooeyFooterColor" (ngModelChange)="modelChangeFn($event)" />
+    <div>
+      <label>Gooey Footer Color</label>
+      <input type="color" [(ngModel)]="gooeyFooterColor" (ngModelChange)="changeColor($event, '--gooeyFooterColor')" />
+    </div>
+    <div>
+      <label>Gooey Bubble Color</label>
+      <input type="color" [(ngModel)]="gooeyBubbleColor" (ngModelChange)="changeColor($event, '--gooeyBubbleColor')" />
+    </div>
   </div>
 </div>
 
